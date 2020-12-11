@@ -1,0 +1,55 @@
+﻿{
+   "ContextClassName": "AgrihubContext",
+   "ContextNamespace": null,
+   "DefaultDacpacSchema": null,
+   "DoNotCombineNamespace": false,
+   "IdReplace": false,
+   "IncludeConnectionString": false,
+   "ModelNamespace": null,
+   "OutputContextPath": null,
+   "OutputPath": null,
+   "ProjectRootNamespace": "AgriHub.Models",
+   "SelectedHandlebarsLanguage": 0,
+   "SelectedToBeGenerated": 2,
+   "Tables": [
+      {
+         "HasPrimaryKey": true,
+         "Name": "[BR].[Broiler]"
+      },
+      {
+         "HasPrimaryKey": true,
+         "Name": "[BR].[BroilerTrans]"
+      },
+      {
+         "HasPrimaryKey": true,
+         "Name": "[BR].[Brooder]"
+      },
+      {
+         "HasPrimaryKey": true,
+         "Name": "[BR].[PenHouse]"
+      },
+      {
+         "HasPrimaryKey": true,
+         "Name": "[LR].[EggsSize]"
+      },
+      {
+         "HasPrimaryKey": true,
+         "Name": "[LR].[Layer]"
+      },
+      {
+         "HasPrimaryKey": true,
+         "Name": "[LR].[LayerHouse]"
+      },
+      {
+         "HasPrimaryKey": true,
+         "Name": "[LR].[LayerTrans]"
+      }
+   ],
+   "UseDatabaseNames": false,
+   "UseDbContextSplitting": false,
+   "UseFluentApiOnly": true,
+   "UseHandleBars": false,
+   "UseInflector": false,
+   "UseLegacyPluralizer": false,
+   "UseSpatial": false
+}

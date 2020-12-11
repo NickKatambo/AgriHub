@@ -1,0 +1,8 @@
+C:\Users\ykatambo\source\repos\AgriHub\AgriHub.Models\bin\Debug\netstandard2.0\AgriHub.Models.deps.json
+C:\Users\ykatambo\source\repos\AgriHub\AgriHub.Models\bin\Debug\netstandard2.0\AgriHub.Models.dll
+C:\Users\ykatambo\source\repos\AgriHub\AgriHub.Models\obj\Debug\netstandard2.0\AgriHub.Models.AssemblyInfoInputs.cache
+C:\Users\ykatambo\source\repos\AgriHub\AgriHub.Models\obj\Debug\netstandard2.0\AgriHub.Models.AssemblyInfo.cs
+C:\Users\ykatambo\source\repos\AgriHub\AgriHub.Models\bin\Debug\netstandard2.0\AgriHub.Models.pdb
+C:\Users\ykatambo\source\repos\AgriHub\AgriHub.Models\obj\Debug\netstandard2.0\AgriHub.Models.csproj.CoreCompileInputs.cache
+C:\Users\ykatambo\source\repos\AgriHub\AgriHub.Models\obj\Debug\netstandard2.0\AgriHub.Models.dll
+C:\Users\ykatambo\source\repos\AgriHub\AgriHub.Models\obj\Debug\netstandard2.0\AgriHub.Models.pdb

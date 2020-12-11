@@ -1,0 +1,12 @@
+C:\Users\ykatambo\source\repos\AgriHub\AgriHub.Core\bin\Release\netstandard2.0\AgriHub.Core.deps.json
+C:\Users\ykatambo\source\repos\AgriHub\AgriHub.Core\bin\Release\netstandard2.0\AgriHub.Core.dll
+C:\Users\ykatambo\source\repos\AgriHub\AgriHub.Core\bin\Release\netstandard2.0\AgriHub.Core.pdb
+C:\Users\ykatambo\source\repos\AgriHub\AgriHub.Core\bin\Release\netstandard2.0\AgriHub.Models.dll
+C:\Users\ykatambo\source\repos\AgriHub\AgriHub.Core\bin\Release\netstandard2.0\AgriHub.Models.pdb
+C:\Users\ykatambo\source\repos\AgriHub\AgriHub.Core\obj\Release\netstandard2.0\AgriHub.Core.csprojAssemblyReference.cache
+C:\Users\ykatambo\source\repos\AgriHub\AgriHub.Core\obj\Release\netstandard2.0\AgriHub.Core.AssemblyInfoInputs.cache
+C:\Users\ykatambo\source\repos\AgriHub\AgriHub.Core\obj\Release\netstandard2.0\AgriHub.Core.AssemblyInfo.cs
+C:\Users\ykatambo\source\repos\AgriHub\AgriHub.Core\obj\Release\netstandard2.0\AgriHub.Core.csproj.CoreCompileInputs.cache
+C:\Users\ykatambo\source\repos\AgriHub\AgriHub.Core\obj\Release\netstandard2.0\AgriHub.Core.csproj.CopyComplete
+C:\Users\ykatambo\source\repos\AgriHub\AgriHub.Core\obj\Release\netstandard2.0\AgriHub.Core.dll
+C:\Users\ykatambo\source\repos\AgriHub\AgriHub.Core\obj\Release\netstandard2.0\AgriHub.Core.pdb

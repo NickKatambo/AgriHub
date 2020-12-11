@@ -1,0 +1,151 @@
+﻿@page
+@model AgriHub.Pages.Broilers.ReceiptModel
+@{
+    ViewData["Title"] = "Broiler Receipt";
+}
+
+<p class="alert alert-success">@ViewData["Title"]</p>
+
+<nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="#">Home</a></li>
+        <li class="breadcrumb-item"><a href="#">Broiler</a></li>
+        <li class="breadcrumb-item active" aria-current="page">@ViewData["Title"]</li>
+    </ol>
+</nav>
+
+<div class="row">
+    <div class="col-sm-7">
+        <div class="card">
+            <div class="card-header">
+                <i class="fas fa-plus-circle"></i> New @ViewData["Title"]
+            </div>
+            <div class="card-body">
+                <form method="post">
+                    <div class="form-group row">
+                        <label asp-for="Broiler.BatchNo" class="col-sm-3 col-form-label">Batch No.</label>
+                        <div class="col-sm-9">
+                            <input asp-for="Broiler.BatchNo" class="form-control" placeholder="Enter batch number here" >
+                            <span asp-validation-for="Broiler.BatchNo" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label asp-for="Broiler.ChicksDaysOld" class="col-sm-3 col-form-label"></label>
+                        <div class="col-sm-9">
+                            <input asp-for="Broiler.ChicksDaysOld" class="form-control" placeholder="Enter number of day(s) old chicks received">
+                            <span asp-validation-for="Broiler.ChicksDaysOld" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label asp-for="Broiler.DateReceipt" class="col-sm-3 col-form-label"></label>
+                        <div class="col-sm-9">
+                            <input asp-for="Broiler.DateReceipt" class="form-control" placeholder="Select date of receipt">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label asp-for="Broiler.BrooderId" class="col-sm-3 col-form-label"></label>
+                        <div class="col-sm-9">
+                            <select asp-for="Broiler.BrooderId" class="form-control" asp-items="Model.BrooderList">
+                                <option value="">Choose One</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label asp-for="Broiler.PinHouseId" class="col-sm-3 col-form-label"></label>
+                        <div class="col-sm-9">
+                            <select asp-for="Broiler.PinHouseId" class="form-control" asp-items="Model.PinHouseList">
+                                <option value="">Choose One</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label asp-for="Broiler.QtyReceipt" class="col-sm-3 col-form-label"></label>
+                        <div class="col-sm-9">
+                            <input asp-for="Broiler.QtyReceipt" class="form-control" placeholder="Enter number of chicks received">
+                            <span asp-validation-for="Broiler.QtyReceipt" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label asp-for="Broiler.AvgWeight" class="col-sm-3 col-form-label"></label>
+                        <div class="col-sm-9">
+                            <input asp-for="Broiler.AvgWeight" class="form-control" placeholder="Enter average weight for the chicks">
+                        </div>
+                    </div>
+                    <a asp-page="/Broilers/Index" class="btn btn-warning">Cancel <i class="fas fa-home"></i></a>
+                    <button type="submit" class="btn btn-primary float-right">Submit <i class="fas fa-play-circle"></i></button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-5">
+        <div class="card mb-3">
+            <div class="card-header bg-light">
+                Brooder Usage
+            </div>
+            <div class="card-body">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th scope="col">Name</th>
+                            <th scope="col">Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model.BrooderStatusList)
+                        {
+                            <tr>
+                                <td>Brooder @item.Id</td>
+                                <td>
+                                    @if (item.Status)
+                                    {
+                                        <span class="badge badge-pill badge-warning">In-Use</span>
+                                    }
+                                    else
+                                    {
+                                        <span class="badge badge-pill badge-success">Available</span>
+                                    }
+                                </td>
+                            </tr>
+                        }
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="card mb-3">
+            <div class="card-header bg-light">
+                Pen House Usage
+            </div>
+            <div class="card-body">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th class="text-center">Capacity</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model.PenHouseStatusList)
+                        {
+                        <tr>
+                            <td>Pen House @item.Id</td>
+                            <td class="text-center">@item.Capacity.ToString()</td>
+                            <td>
+                                @if (item.Status)
+                                {
+                                    <span class="badge badge-pill badge-warning">In-Use</span>
+                                }
+                                else
+                                {
+                                    <span class="badge badge-pill badge-success">Available</span>
+                                }
+                            </td>
+                        </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

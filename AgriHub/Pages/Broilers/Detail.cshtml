@@ -1,0 +1,209 @@
+﻿@page "{id:min(1)?}"
+@model AgriHub.Pages.Broilers.DetailModel
+@{
+    ViewData["Title"] = "Broiler Detail";
+}
+
+<p class="alert alert-secondary">@ViewData["Title"]</p>
+
+<nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="#">Home</a></li>
+        <li class="breadcrumb-item"><a href="#">Broiler</a></li>
+        <li class="breadcrumb-item active" aria-current="page">@ViewData["Title"]</li>
+    </ol>
+</nav>
+
+<div class="row">
+    <div class="col-sm-5">
+        <div class="card mb-2">
+            <div class="card-header">
+                <i class="fas fa-file-contract"></i> New @ViewData["Title"]
+            </div>
+            <div class="card-body">
+                    <fieldset disabled>
+                        <div class="form-group row">
+                            <label asp-for="broiler.BatchNo" class="col-sm-3 col-form-label">Batch No.</label>
+                            <div class="col-sm-9">
+                                <input type="text" asp-for="broiler.BatchNo" class="form-control" placeholder="batch number">
+                                <span asp-validation-for="broiler.BatchNo" class="text-danger"></span>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label asp-for="broiler.ChicksDaysOld" class="col-sm-3 col-form-label"></label>
+                            <div class="col-sm-9">
+                                <input asp-for="broiler.ChicksDaysOld" class="form-control" placeholder="Enter number of day(s) old chicks received">
+                                <span asp-validation-for="broiler.ChicksDaysOld" class="text-danger"></span>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label asp-for="broiler.DateReceipt" class="col-sm-3 col-form-label"></label>
+                            <div class="col-sm-9">
+                                <input asp-for="broiler.DateReceipt" class="form-control" placeholder="Select date of receipt">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label asp-for="broiler.BrooderId" class="col-sm-3 col-form-label"></label>
+                            <div class="col-sm-9">
+                                <select asp-for="broiler.BrooderId" class="form-control" asp-items="Model.BrooderList">
+                                    <option value="">Choose One</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label asp-for="broiler.PinHouseId" class="col-sm-3 col-form-label"></label>
+                            <div class="col-sm-9">
+                                <select asp-for="broiler.PinHouseId" class="form-control" asp-items="Model.PinHouseList">
+                                    <option value="">Choose One</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label asp-for="broiler.QtyReceipt" class="col-sm-3 col-form-label"></label>
+                            <div class="col-sm-9">
+                                <input asp-for="broiler.QtyReceipt" class="form-control" placeholder="Enter number of chicks received">
+                                <span asp-validation-for="broiler.QtyReceipt" class="text-danger"></span>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label asp-for="broiler.AvgWeight" class="col-sm-3 col-form-label"></label>
+                            <div class="col-sm-9">
+                                <input asp-for="broiler.AvgWeight" class="form-control" placeholder="Enter average weight for the chicks">
+                            </div>
+                        </div>
+                    </fieldset>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-header">
+                <i class="fa fa-plus-circle"></i> Daily Checks
+            </div>
+            <div class="card-body">
+                <form method="post">
+                    <div class="form-group row">
+                        <label asp-for="broilerTrans.Mortality" class="col-sm-3 col-form-label"></label>
+                        <div class="col-sm-9">
+                            <input asp-for="broilerTrans.Mortality" class="form-control" placeholder="Enter daily mortality" />
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label asp-for="broilerTrans.AvgWeight" class="col-sm-3 col-form-label"></label>
+                        <div class="col-sm-9">
+                            <input asp-for="broilerTrans.AvgWeight" class="form-control" placeholder="Enter daily Avg. Weight" />
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label asp-for="broilerTrans.StdWeight" class="col-sm-3 col-form-label"></label>
+                        <div class="col-sm-9">
+                            <input asp-for="broilerTrans.StdWeight" class="form-control" placeholder="Enter daily Std. Weight" />
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label asp-for="broilerTrans.FeedCons" class="col-sm-3 col-form-label"></label>
+                        <div class="col-sm-9">
+                            <input asp-for="broilerTrans.FeedCons" class="form-control" placeholder="Enter daily feed consumption (Kg)" />
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label asp-for="broilerTrans.Comment" class="col-sm-3 col-form-label"></label>
+                        <div class="col-sm-9">
+                            <input asp-for="broilerTrans.Comment" class="form-control" placeholder="Enter daily comment" />
+                        </div>
+                    </div>
+
+                    <a asp-page="/Broilers/Index" class="btn btn-warning">Close <i class="fas fa-home"></i></a>
+                    <button type="submit" class="btn btn-primary float-right">Submit <i class="fas fa-play-circle"></i></button>
+                </form>
+            </div>
+        </div>
+
+    </div>
+    <div class="col-sm-7">
+        <!-- status card area -->
+        <div class="card mb-2">
+            <div class="card-body">
+                <div class="embed-responsive">
+                    <div class="card-group ">
+                        <div class="card">
+                            <div class="card-body bg-light">
+                                <p class="card-text text-center font-weight-bold text-primary">200</p>
+                                <p class="card-text text-center">Qty Available</p>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-body bg-light">
+                                <p class="card-text text-center font-weight-bold text-danger">2</p>
+                                <p class="card-text text-center">Mortality</p>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-body bg-light">
+                                <p class="card-text text-center font-weight-bold text-primary">3</p>
+                                <p class="card-text text-center">Current Week</p>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-body bg-light">
+                                <p class="card-text text-center font-weight-bold text-primary">1.81 Kg</p>
+                                <p class="card-text text-center">Avg Weight</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-header">
+                <i class="fa fa-square-o">Batch Weekly Summary</i>
+            </div>
+            <div class="card-body">
+                <div class="table-responsive">
+                    <table class="table table-hover">
+                        <thead>
+                            <tr>
+                                <th>Transaction Date</th>
+                                <th>Week</th>
+                                <th>Opening Stock</th>
+                                <th>Mortality</th>
+                                <th>Closing Stock</th>
+                                <th>Avg Weight</th>
+                                <th>Std Weight</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>8/14/2020 6:39 PM </td>
+                                <td>2</td>
+                                <td>200</td>
+                                <td>2</td>
+                                <td>197</td>
+                                <td>0.99 kg</td>
+                                <td>0.98 kg</td>
+                            </tr>
+                            <tr>
+                                <td>8/19/2020 6:39 PM </td>
+                                <td>2</td>
+                                <td>200</td>
+                                <td>1</td>
+                                <td>199</td>
+                                <td>0.82 kg</td>
+                                <td>0.92 kg</td>
+                            </tr>
+                            <tr>
+                                <td>8/04/2020 6:39 PM </td>
+                                <td>1</td>
+                                <td>200</td>
+                                <td>0</td>
+                                <td>200</td>
+                                <td>0.22 kg</td>
+                                <td>0.22 kg</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

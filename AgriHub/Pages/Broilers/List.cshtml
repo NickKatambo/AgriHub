@@ -1,0 +1,57 @@
+﻿@page
+@model AgriHub.Pages.Broilers.ListModel
+@{
+    ViewData["Title"] = "Broiler Transactions";
+}
+
+<nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="#">Home</a></li>
+        <li class="breadcrumb-item"><a href="#">Broiler</a></li>
+        <li class="breadcrumb-item active" aria-current="page">@ViewData["Title"]</li>
+    </ol>
+</nav>
+
+<div class="card bg-light mb-3">
+    <div class="card-header">@ViewData["Title"]</div>
+    <div class="card-body">
+
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th>Batch #</th>
+                    <th>Date Receipt</th>
+                    <th>Days Old</th>
+                    <th>Week</th>
+                    <th>Brooder</th>
+                    <th>Pen House</th>
+                    <th>Qty</th>
+                    <th>Avg. Weight</th>
+                    <th>Transaction Date</th>
+                    <th>Receipt By</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody class="bg-white">
+                @foreach (var item in Model.BroilersList)
+                {
+                    <tr>
+                        <td>@item.BatchNo</td>
+                        <td>@item.DateReceipt.ToShortDateString()</td>
+                        <td>@item.ChicksDaysOld Days</td>
+                        <td class="text-center">@item.CurrentWeek</td>
+                        <td class="text-center">@item.BrooderId</td>
+                        <td>Pen @item.PinHouseId</td>
+                        <td>@item.QtyReceipt.ToString()</td>
+                        <td class="text-center">@item.AvgWeight</td>
+                        <td>@item.TransactionDate.UtcDateTime.ToShortDateString() @item.TransactionDate.UtcDateTime.ToShortTimeString() </td>
+                        <td>@item.LoggedBy</td>
+                        <td>
+                            <a asp-page="/Broilers/Detail" asp-route-id="@item.Id" class="btn btn-primary m-1">View</a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
